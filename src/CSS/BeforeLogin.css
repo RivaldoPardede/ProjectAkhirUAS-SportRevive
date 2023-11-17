@@ -1,18 +1,47 @@
-/* General Reset */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,200&family=Oswald:wght@700&family=Poppins&display=swap");
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Warna background dasar */
 body {
-    background-color: #0c0c16;
+    height: 100vh;
+    background: url("../Assets/Media/Background.jpg");
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #fe3232;
-    height: 50px;
+    background-color: #dd0000;
+    height: 60px;
+}
+
+.navbar-nav {
+    font-weight: bold;
+    padding-right: 2em;
+}
+
+.navbar-nav a {
+    padding-right: 50px;
+}
+
+.nav-link {
+    transition: 0.2s;
 }
 
 /* Navbar saat hover */
@@ -20,24 +49,15 @@ body {
     color: #0c0c16 !important;
 }
 
-/* Button Join Now */
-.join-now {
-    background-color: #0c0c16;
-    width: 100px;
-    height: 35px;
-    border: none;
-}
-
-/* Button Join Now saat hover */
-.join-now:hover {
-    background-color: #fe3232;
-    box-shadow: none;
-}
+#home h1 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-size: 4em;
+} 
 
 /* background image */
-.img-container {
-    background-image: url("./thrive.jpg");
-    background-size: cover;
+.img-container {  
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -46,25 +66,71 @@ body {
     color: white;
 }
 
-/* Tagline */
-.header {
-    justify-content: center;
-    align-items: center;
+#home button {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1.2em;
+    width: 12em;
+    text-align: center;
+    padding: 5px;
+    height: 100%;
 }
 
 /* Button Login dan Resgister */
 .btn-login-register {
-    background-color: #fe3232;
+    background-color: #dd0000;
     border: none;
     margin: 0 20px;
 }
 
 /* Button Login dan Register saat hover */
 .btn-login-register:hover {
-    background-color: #0c0c16;
+    background-color: #5d0000;
+}
+
+#about {
+    background-color: #0d0d14;
+    padding: 50px;
+}
+
+.developer {
+    display: flex;
+}
+
+.developer .photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+#about h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#about .col-md-6 {
+    transition: 0.5s;
+}
+
+#about .col-md-6:hover {
+    cursor: pointer;
+    transform:scale(1.1);
+}
+
+#service {
+    background-color: #0d0d14;
+    padding: 50px;
+}
+
+#contact {
+    background-color: #0d0d14;
+    padding: 50px;
 }
 
 /* Footer */
 .footer {
-    background-color: #fe3232;
+    background-color: #dd0000
+    ;
 }
