@@ -1,0 +1,70 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Warna background dasar */
+body {
+    background-color: #0c0c16;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fe3232;
+    height: 50px;
+}
+
+/* Navbar saat hover */
+.nav-link:hover {
+    color: #0c0c16 !important;
+}
+
+/* Button Join Now */
+.join-now {
+    background-color: #0c0c16;
+    width: 100px;
+    height: 35px;
+    border: none;
+}
+
+/* Button Join Now saat hover */
+.join-now:hover {
+    background-color: #fe3232;
+    box-shadow: none;
+}
+
+/* background image */
+.img-container {
+    background-image: url("./thrive.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Tagline */
+.header {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Login dan Resgister */
+.btn-login-register {
+    background-color: #fe3232;
+    border: none;
+    margin: 0 20px;
+}
+
+/* Button Login dan Register saat hover */
+.btn-login-register:hover {
+    background-color: #0c0c16;
+}
+
+/* Footer */
+.footer {
+    background-color: #fe3232;
+}
