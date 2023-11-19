@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="595049452262-3alrt56pfqhb54d7bl2cq68qn9c4i144.apps.googleusercontent.com">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../CSS/BeforeLogin.css">
     <title>SportRevive</title>
 </head>
@@ -21,7 +27,7 @@
                         <a class="nav-link active text-white" aria-current="page" href="#home">Home</a>
                         <a class="nav-link text-white text-dark-hover" href="#about">About</a>
                         <a class="nav-link text-white" href="#service">Service</a>
-                        <a class="nav-link text-white" href="#contact`">Contact</a> 
+                        <a class="nav-link text-white" href="#contact">Contact</a> 
                     </div>
                 </div>
             </div>
@@ -34,10 +40,67 @@
         <div class="overflow-x-hidden img-container">
             <h1>LET'S JOIN WITH US!</h1>
             <div class="button">
-                <button type="button" class="btn btn-primary btn-login-register">Log In</button>
-                <button type="button" class="btn btn-primary btn-login-register">Register</button>
+                <button type="button" class="btn-login">Let me in!</button>
+            </div>
+            <div class="wrapper">
+                <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" name="password" id="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                            <div class="remember-forgot">
+                            <label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox">Remember me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div class="login-register">
+                            <p>Don't have an account?<a href="#" class="register-link"> Register</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-box register">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" name="username" id="username" required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" name="email" id="email"  required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" name="password" id="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                            <div class="remember-forgot">
+                            <label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox">I agree to the terms & conditions</label>
+                        </div>
+                            <button type="submit" class="btn">Register</button>
+                            <div class="login-register">
+                            <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+                        </div>
+                    </form>
+                </div> 
             </div>
         </div>
+
+
     </section>
     <!-- Home-End -->
   
@@ -139,17 +202,17 @@
                     <form>
                         <div class="mb-3">
                             <label for="nama" class="form-label text-white">Name:</label>
-                            <input type="text" class="form-control" id="nama" placeholder="enter your name">
+                            <input type="text" class="form-control" name="nama" id="nama" placeholder="enter your name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label text-white">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="enter your email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label text-white">Massage:</label>
-                            <textarea class="form-control" id="pesan" rows="4" placeholder="enter your massage"></textarea>
+                            <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="enter your massage"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-login-register">Submit</button>
+                        <button type="submit" class="btn-submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -209,6 +272,9 @@
     <!-- Footer End -->
 
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="../JS/function.js"></script>
 </body>
 </html>
