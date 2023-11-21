@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,200&family=Oswald:wght@700&family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #0d0d14;
+}
+
+header {
+    position: relative;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #dd0000;
+    height: 60px;
+}
+
+#calendar {
+    background-color: aqua;
+    margin-top: 80px;
+}
+
+#contact {
+    background-color: #0d0d14;
+    padding: 50px;
+}
+
+.btn-submit {
+    background-color: #dd0000;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #5d0000;
+}
+
+/* Footer */
+.footer {
+    background-color: #dd0000;
+}
