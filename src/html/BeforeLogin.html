@@ -39,7 +39,7 @@
         <div class="overflow-x-hidden img-container">
             <h1>LET'S JOIN WITH US!</h1>
             <div class="button">
-                <button type="button" class="btn-login">Let me in!</button>
+                <button type="button" class="btn-join">Let me in!</button>
             </div>
             <div class="wrapper">
                 <span class="icon-close"><ion-icon name="close"></ion-icon></span>
@@ -49,7 +49,7 @@
                     <form action="#">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required autocomplete="off">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-box">
@@ -61,8 +61,8 @@
                             <label for="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
                             <a href="#">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="btn">Login</button> 
-                        <button type="button" class="login-with-google-btn" >Sign in with Google</button>
+                        <button type="submit" class="btn-login">Login</button> 
+                        <button type="button" class="login-with-google-btn" >Login with Google</button>
                         <div class="login-register">
                             <p>Don't have an account?<a href="#" class="register-link"> Register</a></p>
                         </div>
@@ -74,12 +74,12 @@
                     <form action="#">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
-                            <input type="text" name="username" id="username" required>
+                            <input type="text" name="username" id="username" required autocomplete="off">
                             <label for="username">Username</label>
                         </div>
                         <div class="input-box">
                             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input type="email" name="email"  required>
+                            <input type="email" name="email"  required autocomplete="off">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-box">
@@ -90,8 +90,9 @@
                             <div class="remember-forgot">
                             <label for="checkbox"><input type="checkbox" name="checkbox">I agree to the terms & conditions</label>
                         </div>
-                            <button type="submit" class="btn">Register</button>
-                            <div class="login-register">
+                            <button type="submit" class="btn-register">Register</button>
+                            <button type="button" class="login-with-google-btn" >Register with Google</button>
+                        <div class="login-register">
                             <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
                         </div>
                     </form>
@@ -242,7 +243,7 @@
             </div>
         </div>
     </footer>
-    <!-- Footer End -->
+    <!-- Footer End --> 
 
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

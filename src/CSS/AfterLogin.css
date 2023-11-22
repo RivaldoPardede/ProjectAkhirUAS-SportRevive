@@ -22,9 +22,149 @@ header {
     height: 60px;
 }
 
-#calendar {
-    background-color: aqua;
-    margin-top: 80px;
+#calendar-section {
+    margin-top: 100px;
+}
+
+#calendar-section .month-year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#calendar-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rounded-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
+    margin: 0px 20px;
+}
+
+#calendar-section button {
+    background: none;
+    border: none;
+    margin: 0px 10px;
+}
+
+#calendar-section button i {
+    font-size: 30px;
+}
+
+#profile_settings .container {
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 35%;
+    background-color: rgba(214, 163, 163, 0.316);
+    backdrop-filter: blur(20px);
+    color: white;
+    width: 400px;
+    height: 550px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 0.5s ease, height 0.2s ease;
+    z-index: 999;
+}
+
+#profile_settings .container.active-popup {
+    transform: scale(1);
+}
+
+#profile_settings .container .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #dd0000;
+    font-size: 2em;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#profile_settings .profile-photo {
+    background: url(../Assets/Media/DevProfile/azi.png);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: auto;
+}
+
+#profile_settings .container h2,
+h3,
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_settings .container .gender-settings label {
+    width: 72%;
+    padding: 5px 0px;
+}
+#profile_settings .container .notif {
+    display: flex;
+    align-items: center;
+}
+
+#profile_settings .container .notif .toggle {
+    width: 74%;
+    margin-top: 10px;
+    padding: 5px 0px;
+}
+
+.gender-settings select {
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#profile_settings .logout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notif .form-check {
+    font-size: 35px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notif .form-check input {
+    &:checked {
+        background-color: rgb(72, 255, 72);
+        border: #0d0d14;
+        color: red;
+    }
+}
+
+#exercise .col-md-6 {
+    transition: 0.5s;
+}
+
+#exercise .col-md-6:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 #contact {

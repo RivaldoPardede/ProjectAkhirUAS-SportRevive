@@ -71,8 +71,7 @@ body::before {
     margin-top: 20px;
 }
 
-.btn-login,
-.btn-register {
+.btn-join{
     margin-top: 20px;
     font-weight: 500;
     font-size: 1.2em;
@@ -87,8 +86,7 @@ body::before {
 }
 
 /* Button Login dan Register saat hover */
-.btn-login:hover,
-.btn-register:hover {
+.btn-join:hover {
     background-color: #5d0000;
     color: black;
 }
@@ -237,7 +235,7 @@ body::before {
     text-decoration: underline;
 }
 
-.btn {
+.btn-login, .btn-register {
     width: 100%;
     height: 45px;
     background: #dd0000;
@@ -250,7 +248,7 @@ body::before {
     font-weight: 500;
 }
 
-.btn:hover {
+.btn-login:hover, .btn-register:hover {
     background: #5d0000;
 }
 
@@ -298,7 +296,6 @@ body::before {
     &:active {
         background-color: #2d2d2d;
     }
-
 
     &:disabled {
         filter: grayscale(100%);
