@@ -18,14 +18,16 @@
     <header> 
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark"> 
             <div class="container-fluid"> 
-                <a class="navbar-logo" href="#"><img src="../Assets/Media/logo only.png" alt="SportRevive logo" width="80px"></a> 
+                <a class="navbar-logo" href="#" style="text-decoration: none;">
+                    <img src="../Assets/Media/logo only.png" alt="SPORTREVIVE" width="70"/>
+                    <img src="../Assets/Media/logoName.png" alt="SPORTREVIVE" width="150"/>
+                </a> 
                 <ul class="navbar-nav d-flex flex-row me-1">
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link text-white" href="#contact">Contact</a>
                     </li>
                     <li class="profile">
-                        <a class="nav-link  text-white" href="#"  
-                         aria-expanded="false"> <i class="fas fa-user mx-1"></i> Profile </a> 
+                        <span class="nav-link  text-white" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Profile </span> 
                     </li>
                 </ul>
             </div> 
@@ -67,8 +69,8 @@
             <div class="gender-settings">
                 <label for="gender">Gender</label>
                 <select name="gender" id="gender-option">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="man">Man</option>
+                    <option value="woman">Woman</option>
                 </select>
             </div>
             <div class="notif">
@@ -81,7 +83,7 @@
             </div>
             <hr>
             <div class="logout-btn">
-                <button class="btn-submit">Logout</button>
+                <button class="btn-logout">Logout</button>
             </div>
         </div>
     </section>
@@ -125,14 +127,14 @@
         <div class="container mt-5">
             <div class="row row-cols-3 row-gap-2">
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" style="background: url('../Assets/Media/Leg/leg.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-1" style="background: url('../Assets/Media/Leg/woman_leg.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>LEG</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" style="background: url('../Assets/Media/Abs/abs.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-2" style="background: url('../Assets/Media/Abs/woman_abs.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>ABS</h1>
                         </div>
@@ -144,14 +146,14 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" style="background: url('../Assets/Media/Arm/arm.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-3" style="background: url('../Assets/Media/Arm/man_arm.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-3" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>ARM</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" style="background: url('../Assets/Media/Chest/Chest.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-4" style="background: url('../Assets/Media/Chest/man_chest.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-4" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>CHEST</h1>
                         </div>
@@ -163,7 +165,7 @@
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6 mb-3">
-                <div class="exercise-box" style="background: url('../Assets/Media/Shoulder_Back/shoulder.jpg') center/cover; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                <div class="exercise-box" id="box-5" style="background: url('../Assets/Media/Shoulder_Back/man_shoulder.jpg') center/cover; height: 300px; width:90%; position: relative; border-radius: 20px;">
                     <div class="exercise-5" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;"> 
                         <h1 class="text-">SHOULDER AND BACK</h1>
                     </div>

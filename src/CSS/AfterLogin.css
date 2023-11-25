@@ -22,6 +22,12 @@ header {
     height: 60px;
 }
 
+.nav-link {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 #calendar-section {
     margin-top: 100px;
 }
@@ -61,6 +67,7 @@ header {
 
 #profile_settings .container {
     position: absolute;
+    position: fixed;
     margin-top: -100px;
     margin-left: 35%;
     background-color: rgba(214, 163, 163, 0.316);
@@ -117,7 +124,7 @@ p {
 }
 
 #profile_settings .container .gender-settings label {
-    width: 72%;
+    width: 71%;
     padding: 5px 0px;
 }
 #profile_settings .container .notif {
@@ -142,6 +149,26 @@ p {
     align-items: center;
 }
 
+#profile_settings .btn-logout{
+    margin: auto;
+    width: 50%;
+    box-shadow: 5px 5px;
+    transition: 0.2s;
+    background-color: #dd0000;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+
+    &:active {
+        box-shadow: 0px 0px;
+    }
+
+    &:hover {
+        background-color: #5d0000;
+    }
+}
+
 .notif .form-check {
     font-size: 35px;
     margin: auto;
@@ -162,7 +189,7 @@ p {
     position: absolute;
     position: fixed;
     margin-top: -120px;
-    margin-left: 31%;
+    margin-left: 28em;
     background-color: gray;
     width: max-content;
     overflow: hidden;
@@ -208,6 +235,7 @@ p {
 
 #exercise .exercise-box {
     transition: 0.5s;
+    margin-left: 22px;
 }
 
 #exercise .exercise-box:hover {
