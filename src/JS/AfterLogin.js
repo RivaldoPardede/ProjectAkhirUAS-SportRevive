@@ -64,7 +64,7 @@ iconClose.addEventListener("click", () => {
     profileContainer.classList.remove("active-popup");
 });
 
-const settingsIcon = document.getElementsByClassName("nav-link");
+const settingsIcon = document.querySelector(".nav-link");
 settingsIcon.addEventListener("click", (event) => {
     event.preventDefault();
 });

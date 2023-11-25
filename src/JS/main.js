@@ -45,37 +45,28 @@ register.addEventListener("click", (event) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Send verification email
             sendEmailVerification(userCredential.user);
-
-            // Redirect or show a message to inform the user to check their email for verification
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            // Handle errors
         });
 });
 
 function sendEmailVerification(user) {
     sendEmailVerification(user)
         .then(() => {
-            // Email sent successfully
             console.log("Verification email sent");
         })
         .catch((error) => {
-            // Handle errors
             console.error("Error sending verification email", error);
         });
 }
 
 const login = document.querySelector(".btn-login");
 login.addEventListener("click", async (event) => {
-    // Prevent the default form submission
     event.preventDefault();
 
-    // Get the email and password values from the input fields
     const email = document.querySelector('[name="email"]').value;
     const password = document.querySelector('[name="password"]').value;
 
@@ -87,12 +78,9 @@ login.addEventListener("click", async (event) => {
         );
         const user = userCredential.user;
 
-        // Check if the user's email is verified
         if (user.emailVerified) {
-            // Email is verified, redirect to AfterLogin.html
             window.location.href = "../html/AfterLogin.html";
         } else {
-            // Email is not verified, inform the user
             console.log(
                 "Email not verified. Please check your email for a verification link."
             );
