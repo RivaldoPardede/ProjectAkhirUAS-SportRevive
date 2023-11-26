@@ -9,6 +9,7 @@
 
 body {
     height: 100vh;
+    position: relative;
     background-color: #0d0d14;
 }
 
@@ -68,8 +69,11 @@ header {
 #profile_settings .container {
     position: absolute;
     position: fixed;
-    margin-top: -100px;
-    margin-left: 35%;
+    margin: auto;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background-color: rgba(214, 163, 163, 0.316);
     backdrop-filter: blur(20px);
     color: white;
@@ -188,8 +192,9 @@ p {
 #gender .container {
     position: absolute;
     position: fixed;
-    margin-top: -120px;
-    margin-left: 28em;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: gray;
     width: max-content;
     overflow: hidden;
@@ -248,19 +253,55 @@ p {
     padding: 50px;
 }
 
+#contact .col-md-6 {
+    margin: auto;
+}
+
+#contact textarea {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
 .btn-submit {
     background-color: #dd0000;
     font-size: 1em;
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
+    transition: 0.2s;
 }
 
 .btn-submit:hover {
     background-color: #5d0000;
 }
 
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #5d0000;
+    color: white;
+}
+
 /* Footer */
-.footer {
+footer {
     background-color: #dd0000;
+    padding: 20px;
+}
+
+footer .container h4,h5 {
+    font-weight: 900;
+    margin: auto;
+    padding: 10px;
+}
+
+footer hr {
+        height: 2px;
+        background: black;
+}
+
+footer .container .text-center {
+    font-weight: bold;
 }

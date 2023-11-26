@@ -30,7 +30,6 @@ for (let i = 0; i < 2; i++) {
 }
 
 function updateBackground() {
-    console.log(gender);
     for (let i = 0; i < 5; i++) {
         const exercise_box = document.getElementById("box-" + (i + 1));
         if (gender == "man") {
@@ -64,7 +63,7 @@ iconClose.addEventListener("click", () => {
     profileContainer.classList.remove("active-popup");
 });
 
-const settingsIcon = document.querySelector(".nav-link");
+const settingsIcon = document.querySelector("#profile");
 settingsIcon.addEventListener("click", (event) => {
     event.preventDefault();
 });
@@ -117,3 +116,26 @@ function prevDates() {
     displayDates();
 }
 displayDates();
+
+
+let mybutton = document.getElementById("btn-back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
