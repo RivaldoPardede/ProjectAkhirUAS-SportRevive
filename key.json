@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "sportrevive",
+    "private_key_id": "7d740029ff080701688f2fb7d244e60b466e2e33",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLHuNn6SmRxpMt\nKKnfm3w+1UBm3dkqMOR4HZMpqyz+Ow3G9ZcznGjBSVC0FkFtQsmDR9uXDDQs/Xzw\nZEJuiC82OFva/5Gw69nvMTPtdi9xTylGbdL7sm1QEot8gBN5g9mW1GmCSY4Jk9lQ\n8DBqmINTGxmB8FmR0SPSKPtnXnTDFfcQQ+H7RzMNYZo4tSZli13QRF3STA0lwg/d\nl07giZZWHbUEy6O/NreIs/U6vqviP/x+ySwVXfN7I1/2Yd6PaEDpQcMBF0mVtw1y\nw18XYdS1/Uf+SkgJ7K49vjOqAPaH4/dwa3b2aiWAVm9bvQp+PQT6834onjcZo35S\n64jcKSlxAgMBAAECggEAXcOTfEtA2j9Nf2IvEL7o2uR8R0AP2I8bWGtmnKydJ3rB\nQF/sfXGtVdRvQcKoTzSua0DHmHGUwFP/0cSmefm5uZDIrk6dxYsKXoVbEDonamn9\nhrp506CpH3aAF2fUFZsM3biOQAuOWtN6VQebggmHTdzLqJT38/0USRaL/0q2Ibt2\nZ0UbL2fy/jxW3ICYsf6W5wO9CAZjyc25g63P8JS/MzPN+AyoB79yWwWloyx7rW8s\nCU4SYIHC5wYQ5DvTjz2TGwYMxji6J/jvHgjUeNYIwmKJNEG3bcz/SJFzKdZwKbX/\nn3sCw0uy9N2mth29j7IP2SfCigKd1vKTVwJohm6p1QKBgQDqOIyC6y51xE/V6bLx\nKc5aeOU6VDKs65CXfSqy22ywpX4kTL4JILLSfvIWnmRSybPl8gsrx1YxV840W2Mi\nTRASnuBvgQzWnO/XpQyO50x+EmBuWIK/ql742ZAHblBfnvLNkLP3fA22+50L+WiX\nZYKTy+KXUXzFeHXuor2Ihm+jlwKBgQDeAgWXBqkQOmS+fPYy4DyUAIVgvgjCFp+M\nn2u9uH4NDAeLZ/SOTbmIw8swZ9qU/YvdNRnD90+UgSJH39XoexkGtXcREka+9FFk\ntWLqvot4kWzoe7C0eQDou9lALx5iMMqQ0XP4KPYiACMKHL5HGV/k+cJIvSSCJIEW\nQy7kzQucNwKBgQDKyBK+9ibPRxtntGF8chl6MtkjWupU083nmjJxj4/WkDFZ9CdD\nd8/adpXaB2AMXR0npBsP2BFDvyWEJur5M4cK2Aqv/ybCWDU+mmL5BkAvlnFul6r7\njeGTyajtBhEH+HF2kCV/yyOEnOsnBtQK35Phqc+P+rjvro9MABHgNaRKGQKBgA1W\nL8HH26Ym6+Bpn1ylDd6SPXD3WY1XUJRhC1blW2UrQNTGFPHrh2bI5E7vHjlvFdTf\nGMIl/DjenRGWR8JkirdVdWaoI2nbQXx8TQnvEm/WxKUesRnWXxCcIEvzyK57Yd/b\nRU02ILsgKPq1iVS6GIGn41z9R9EtojeVJ58FFlp3AoGBAJy2o5ubBfXMxTCsWZvb\n38Ly7kjAlSN5A7FlYn01wUJQ08v+FNqEcLwqnrDuQAIzlDC+exEyzppaUMzmRJrP\nBs5zK6M4rtEyuLdDMxksty69ejx/jzqpiNH13026sfLX08mTRIU4Ec/t0aDIitae\nWXLNs+EJarKDS+XIYO6PtZhv\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-e6pd4@sportrevive.iam.gserviceaccount.com",
+    "client_id": "105755522665460793335",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-e6pd4%40sportrevive.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }

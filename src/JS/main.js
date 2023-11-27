@@ -5,6 +5,7 @@ import {
     signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -15,7 +16,7 @@ const firebaseConfig = {
     messagingSenderId: "595049452262",
     appId: "1:595049452262:web:3e345de3a3916d09536127",
 };
-
+//OAuth2.0 Implementation
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = "en";
@@ -37,57 +38,83 @@ googleLogin.addEventListener("click", () => {
 });
 
 const register = document.querySelector(".btn-register");
-register.addEventListener("click", (event) => {
+register.addEventListener("click", async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('[name="email"]').value;
-    const password = document.querySelector('[name="password"]').value;
+    const email = document.querySelector("#emailRegister").value;
+    const password = document.querySelector("#passwordRegister").value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            sendEmailVerification(userCredential.user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
+    console.log(`Email: ${email}, Password: ${password}`);
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        const user = userCredential.user;
+        console.log(user);
+
+        await sendEmailVerification(user);
+
+        alert("User Created Successfully. Email verification link sent!");
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Registration error:", errorCode, errorMessage);
+    }
 });
-
-function sendEmailVerification(user) {
-    sendEmailVerification(user)
-        .then(() => {
-            console.log("Verification email sent");
-        })
-        .catch((error) => {
-            console.error("Error sending verification email", error);
-        });
-}
 
 const login = document.querySelector(".btn-login");
 login.addEventListener("click", async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('[name="email"]').value;
-    const password = document.querySelector('[name="password"]').value;
-
+    const email = document.querySelector("#emailLogin").value;
+    const password = document.querySelector("#passwordLogin").value;
+    console.log(`Email: ${email}, Password: ${password}`);
     try {
         const userCredential = await signInWithEmailAndPassword(
             auth,
             email,
             password
         );
-        const user = userCredential.user;
 
-        if (user.emailVerified) {
+        if (userCredential.user.emailVerified) {
+            alert("login successfully!");
             window.location.href = "../html/AfterLogin.html";
         } else {
-            console.log(
-                "Email not verified. Please check your email for a verification link."
-            );
+            alert("Please verify your email first.");
         }
     } catch (error) {
+        alert("Wrong email/password");
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Authentication error:", errorCode, errorMessage);
     }
 });
+
+const user = auth.currentUser;
+const userData = {
+    uid: user.uid,
+    email: user.email,
+    displayName: user.displayName,
+    photoURL: user.photoURL,
+    // tambahkan properti pengguna lainnya yang ingin kamu simpan
+};
+
+// Panggilan HTTP POST ke server backend
+fetch("http://localhost:8080/saveUserData", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error("Error saving user data:", error);
+    });
