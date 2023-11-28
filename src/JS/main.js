@@ -16,105 +16,189 @@ const firebaseConfig = {
     messagingSenderId: "595049452262",
     appId: "1:595049452262:web:3e345de3a3916d09536127",
 };
-//OAuth2.0 Implementation
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = "en";
 const provider = new GoogleAuthProvider();
 
-const googleLogin = document.querySelector(".login-with-google-btn");
-googleLogin.addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-        .then((result) => {
+const googleLoginButtons = document.querySelectorAll(".login-with-google-btn");
+
+googleLoginButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+        const isRegisterButton = button.classList.contains("register-btn");
+
+        try {
+            const result = await signInWithPopup(auth, provider);
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
-            console.log(user);
+
+            if (isRegisterButton) {
+                // Jika tombol register, periksa apakah email sudah terdaftar
+                const emailExists = await checkEmailExists(user.email);
+
+                if (emailExists) {
+                    alert("Email already exists. Please login.");
+                    return;
+                }
+
+                // Jika email belum ada di Firestore, simpan data
+                await fetch("http://localhost:8080/create", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        username: user.displayName,
+                        email: user.email,
+                    }),
+                });
+            }
+
+            // Pindah ke halaman setelah login
             window.location.href = "../html/AfterLogin.html";
-        })
-        .catch((error) => {
+        } catch (error) {
             const errorCode = error.code;
             const errorMessage = error.message;
-        });
+            console.error("Error:", errorCode, errorMessage);
+        }
+    });
 });
+
+async function checkEmailExists(email) {
+    const response = await fetch(
+        `http://localhost:8080/check-email?email=${email}`
+    );
+    const data = await response.json();
+    return data.exists;
+}
 
 const register = document.querySelector(".btn-register");
-register.addEventListener("click", async (event) => {
-    event.preventDefault();
+if (register) {
+    register.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-    const email = document.querySelector("#emailRegister").value;
-    const password = document.querySelector("#passwordRegister").value;
+        const username = document.querySelector("#usernameRegister").value;
+        const email = document.querySelector("#emailRegister").value;
 
-    console.log(`Email: ${email}, Password: ${password}`);
+        console.log(`Username: ${username}, Email: ${email}`);
 
-    try {
-        const userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+        const emailExists = await checkEmailExists(email);
+        if (emailExists) {
+            alert("Email already exists. Please login.");
+            return;
+        }
 
-        const user = userCredential.user;
-        console.log(user);
+        try {
+            const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email
+            );
 
-        await sendEmailVerification(user);
+            const user = userCredential.user;
+            console.log(user);
 
-        alert("User Created Successfully. Email verification link sent!");
-    } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Registration error:", errorCode, errorMessage);
-    }
-});
+            await sendEmailVerification(user);
+
+            fetch("http://localhost:8080/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, email }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("Success:", data);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+
+            alert("User Created Successfully. Email verification link sent!");
+        } catch (error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error("Registration error:", errorCode, errorMessage);
+        }
+    });
+}
 
 const login = document.querySelector(".btn-login");
-login.addEventListener("click", async (event) => {
-    event.preventDefault();
+if (login) {
+    login.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-    const email = document.querySelector("#emailLogin").value;
-    const password = document.querySelector("#passwordLogin").value;
-    console.log(`Email: ${email}, Password: ${password}`);
-    try {
-        const userCredential = await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+        const email = document.querySelector("#emailLogin").value;
+        const password = document.querySelector("#passwordLogin").value;
+        console.log(`Email: ${email}, Password: ${password}`);
+        try {
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
-        if (userCredential.user.emailVerified) {
-            alert("login successfully!");
-            window.location.href = "../html/AfterLogin.html";
-        } else {
-            alert("Please verify your email first.");
+            if (userCredential.user.emailVerified) {
+                alert("login successfully!");
+                window.location.href = "../html/AfterLogin.html";
+            } else {
+                alert("Please verify your email first.");
+            }
+        } catch (error) {
+            alert("Wrong email/password");
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error("Authentication error:", errorCode, errorMessage);
         }
-    } catch (error) {
-        alert("Wrong email/password");
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Authentication error:", errorCode, errorMessage);
-    }
-});
-
-const user = auth.currentUser;
-const userData = {
-    uid: user.uid,
-    email: user.email,
-    displayName: user.displayName,
-    photoURL: user.photoURL,
-    // tambahkan properti pengguna lainnya yang ingin kamu simpan
-};
-
-// Panggilan HTTP POST ke server backend
-fetch("http://localhost:8080/saveUserData", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-})
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-    })
-    .catch((error) => {
-        console.error("Error saving user data:", error);
     });
+}
+
+if (window.location.href.includes("AfterLogin.html")) {
+    auth.onAuthStateChanged(async (user) => {
+        if (user) {
+            console.log("User is logged in:", user);
+
+            const photoElement = document.querySelector(".profile-photo");
+            if (user.photoURL) {
+                photoElement.style.backgroundImage = `url(${user.photoURL})`;
+            } else {
+                photoElement.style.backgroundImage =
+                    "url(/path/to/default/avatar.png)";
+            }
+            const emailElement = document.querySelector(".profile-email");
+            if (user.email) {
+                emailElement.innerHTML = user.email;
+            } else {
+                console.error("User email not available");
+            }
+
+            const usernameElement = document.querySelector(".profile-username");
+
+            if (user && user.displayName) {
+                usernameElement.innerHTML = user.displayName;
+            } else {
+                console.error(
+                    "Invalid response from server - no username data"
+                );
+            }
+        } else {
+            console.log("User is logged out");
+        }
+    });
+}
+
+const logoutButton = document.querySelector(".btn-logout");
+
+if (logoutButton) {
+    logoutButton.addEventListener("click", async () => {
+        try {
+            await auth.signOut();
+            alert("Logout Successfully!")
+            window.location.href = "../html/BeforeLogin.html";
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
+    });
+}
+

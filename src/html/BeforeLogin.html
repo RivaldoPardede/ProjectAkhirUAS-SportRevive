@@ -9,7 +9,7 @@
         crossorigin="anonymous" 
         referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../CSS/BeforeLogin.css">
+    <link rel="stylesheet" href="../CSS/BeforeLogin.css" type="text/css">
     <title>SportRevive</title>
 </head>
 <body>
@@ -75,7 +75,7 @@
                     <form action="#">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
-                            <input type="text" name="username" id="username" required autocomplete="off">
+                            <input type="text" name="username" id="usernameRegister" required autocomplete="off">
                             <label for="username">Username</label>
                         </div>
                         <div class="input-box">
@@ -89,10 +89,10 @@
                             <label for="password">Password</label>
                         </div>
                             <div class="remember-forgot">
-                            <label for="checkbox"><input type="checkbox" name="checkbox">I agree to the terms & conditions</label>
+                            <label for="checkbox"><input type="checkbox" name="checkbox" required>I agree to the terms & conditions</label>
                         </div>
                             <button type="submit" class="btn-register">Register</button>
-                            <button type="button" class="login-with-google-btn" >Register with Google</button>
+                            <button type="button" class="login-with-google-btn .register-btn" >Register with Google</button>
                         <div class="login-register">
                             <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
                         </div>
@@ -192,31 +192,6 @@
         
     </section>
     <!-- Service-End -->
-        
-    <!-- saran -->
-    <section id="contact">
-        <div class="container mt-5 ">
-            <div class="row">
-                <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label for="nama" class="form-label text-white">Name:</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="enter your name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label text-white">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pesan" class="form-label text-white">Massage:</label>
-                            <textarea class="form-control" id="pesan" name="pesan" rows="4"  placeholder="enter your massage"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <section id="scroll-to-top">
         <button

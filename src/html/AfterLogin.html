@@ -62,8 +62,8 @@
             <span class="icon-close"><ion-icon name="close"></ion-icon></span>
             <h2>Profile - Settings</h2>
             <div class="profile-photo"></div>
-            <p style="margin: 10px 0px;">Username</p>
-            <p>User email address</p>
+            <p style="margin: 10px 0px;" class="profile-username">Username</p>
+            <p class="profile-email">User email address</p>
             <hr>
             <h3>Settings</h3>
             <div class="gender-settings">
@@ -90,7 +90,7 @@
     <!-- ProfileSettings-End -->
     
     <!-- Gender - Start -->
-    <section id="gender" hidden>
+    <section id="gender">
         <div class="container">
             <h3>Choose Your Gender</h3>
             <div class="option-gender">
@@ -127,14 +127,14 @@
         <div class="container mt-5">
             <div class="row row-cols-3 row-gap-2">
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" id="box-1" style="background: url('../Assets/Media/Leg/woman_leg.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-1" data-exercise-type="leg" style="background: url('../Assets/Media/Leg/woman_leg.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>LEG</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" id="box-2" style="background: url('../Assets/Media/Abs/woman_abs.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-2" data-exercise-type="abs" style="background: url('../Assets/Media/Abs/woman_abs.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>ABS</h1>
                         </div>
@@ -146,14 +146,14 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" id="box-3" style="background: url('../Assets/Media/Arm/man_arm.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-3" data-exercise-type="arm" style="background: url('../Assets/Media/Arm/man_arm.jpg') center/cover no-repeat; height: 300px; width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-3" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>ARM</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <div class="exercise-box" id="box-4" style="background: url('../Assets/Media/Chest/man_chest.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
+                    <div class="exercise-box" id="box-4" data-exercise-type="chest" style="background: url('../Assets/Media/Chest/man_chest.jpg') center/cover; height: 300px;  width:90%; position: relative; border-radius: 20px;">
                         <div class="exercise-4" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                             <h1>CHEST</h1>
                         </div>
@@ -165,7 +165,7 @@
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6 mb-3">
-                <div class="exercise-box" id="box-5" style="background: url('../Assets/Media/Shoulder_Back/man_shoulder.jpg') center/cover; height: 300px; width:90%; position: relative; border-radius: 20px;">
+                <div class="exercise-box" id="box-5" data-exercise-type="shoulder_back" style="background: url('../Assets/Media/Shoulder_Back/man_shoulder.jpg') center/cover; height: 300px; width:90%; position: relative; border-radius: 20px;">
                     <div class="exercise-5" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;"> 
                         <h1 class="text-">SHOULDER AND BACK</h1>
                     </div>
@@ -175,31 +175,6 @@
         </div>
     </section>
     <!-- Exercise-End -->
-
-    <!-- saran -->
-    <section id="contact">
-        <div class="container mt-5 ">
-            <div class="row">
-                <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label for="nama" class="form-label text-white">Name:</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="enter your name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label text-white">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pesan" class="form-label text-white">Massage:</label>
-                            <textarea class="form-control" id="pesan" name="pesan" rows="4"  placeholder="enter your massage"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <section id="scroll-to-top">
         <button
@@ -229,5 +204,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../JS/AfterLogin.js"></script>
+    <script type="module" src="../JS/main.js"></script>
 </body>
 </html>
