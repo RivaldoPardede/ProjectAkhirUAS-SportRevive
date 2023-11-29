@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" 
@@ -23,9 +25,6 @@
                     <img src="../Assets/Media/logoName.png" alt="SPORTREVIVE" width="150"/>
                 </a> 
                 <ul class="navbar-nav d-flex flex-row me-1">
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link text-white" href="#contact">Contact</a>
-                    </li>
                     <li class="profile">
                         <span class="nav-link  text-white" id="profile" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Profile </span> 
                     </li>
@@ -34,27 +33,6 @@
         </nav> 
     </header>
     <!-- Navbar-End -->
-      
-    <!-- Calendar-Start -->
-    <section id="calendar-section">
-        <div class="month-year"><h2 id="month-year"></h2></div>
-        <div class="container">
-            <div class="d-flex justify-content-center align-items-center">
-                <button onclick="prevDates()">
-                    <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
-                </button>
-                <div class="rounded-circle bg-white p-3" id="circle1"></div>
-                <div class="rounded-circle bg-white p-3" id="circle2"></div>
-                <div class="rounded-circle bg-white p-3" id="circle3"></div>
-                <div class="rounded-circle bg-white p-3" id="circle4"></div>
-                <div class="rounded-circle bg-white p-3" id="circle5"></div>
-                <button onclick="nextDates()">
-                    <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-    <!-- Calendar-End -->
 
     <!-- ProfileSettings-Start -->
     <section id="profile_settings">
@@ -72,14 +50,6 @@
                     <option value="man">Man</option>
                     <option value="woman">Woman</option>
                 </select>
-            </div>
-            <div class="notif">
-                <label class="toggle" for="toggle-notif">
-                    Notify me by email if i haven't exercised more than a week
-                </label>
-                <div class="form-check form-switch ml-2" id="tombol">
-                    <input class="form-check-input" type="checkbox">
-                </div>
             </div>
             <hr>
             <div class="logout-btn">
@@ -109,19 +79,8 @@
 
     <!-- Exercise-Start -->
     <section id="exercise">
-        <div class="container mt-5">
-            <div class="container mt-5 d-flex justify-content-center align-items-center">
-                <div class="border border-white p-3 text-center" style="width: 50vw; height: 50vw; max-width: 250px; max-height: 160px;">
-                    <img id="selectedImage" src="" alt="" style="max-width: 100%; max-height: 100%;">
-                </div>
-            </div>
-            <div class="text-white text-center mt-3">
-                <h5>Your last exercise</h5>
-            </div>
-        </div>
-      
-        <div class="container mt-5">
-            <p class="text-white text-center font-weight-bold">What kind of exercise would you like to do today?</p>
+        <div class="container" >
+            <h3 id="lastExercise" class="text-white text-center font-weight-bold">What kind of exercise would you like to do today?</h3>
         </div>
       
         <div class="container mt-5">
@@ -199,7 +158,7 @@
         </div>
     </footer>
 
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/cec779efb8.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

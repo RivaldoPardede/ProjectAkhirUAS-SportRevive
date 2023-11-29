@@ -88,60 +88,6 @@ app.get("/check-email", async (req, res) => {
 });
 
 
-app.get("/Exercise/:gender/:exerciseType", (req,res) => {
-    const gender = req.params.gender;
-    const exerciseType = req.params.exerciseType;
-
-    if (gender == "man") {
-        if (exerciseType == "abs") {
-            const video = [
-                "../Assets/Media/Abs/Man/airback.mp4",
-                "../Assets/Media/Abs/Man/boll_sit_up.mp4",
-                "../Assets/Media/Abs/Man/hell_kick.mp4",
-                "../Assets/Media/Abs/Man/lying_down_leg_raises.mp4",
-                "../Assets/Media/Abs/Man/mountain_climbers.mp4",
-                "../Assets/Media/Abs/Man/plank_jump_ins.mp4",
-                "../Assets/Media/Abs/Man/plank_one_leg_raise.mp4",
-                "../Assets/Media/Abs/Man/plank_with_arm_raise.mp4",
-                "../Assets/Media/Abs/Man/reverse_hip_raise.mp4",
-                "../Assets/Media/Abs/Man/seated_leg_pull_ins.mp4",
-                "../Assets/Media/Abs/Man/spider_push_up.mp4",
-            ];
-            const nama = [
-                "airback",
-                "boll sit up",
-                "hell kick",
-                "lying down leg raises",
-                "mountain climbers",
-                "plank jump ins",
-                "plank one leg raise",
-                "plank with arm raise",
-                "reverse hip raise",
-                "seated leg pull ins",
-                "spider push up",
-            ];
-            const repetisi = [
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-                "2x10",
-            ];
-            res.json({ video, nama, repetisi });
-
-        }
-    } else {
-        res.status(404).json({ error: "Not Found" });
-    }
-});
-
-
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);

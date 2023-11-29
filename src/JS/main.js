@@ -56,7 +56,7 @@ googleLoginButtons.forEach((button) => {
             }
 
             // Pindah ke halaman setelah login
-            window.location.href = "../html/AfterLogin.html";
+            window.location.href = "html/AfterLogin.html";
         } catch (error) {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -141,7 +141,7 @@ if (login) {
 
             if (userCredential.user.emailVerified) {
                 alert("login successfully!");
-                window.location.href = "../html/AfterLogin.html";
+                window.location.href = "html/AfterLogin.html";
             } else {
                 alert("Please verify your email first.");
             }
@@ -164,7 +164,7 @@ if (window.location.href.includes("AfterLogin.html")) {
                 photoElement.style.backgroundImage = `url(${user.photoURL})`;
             } else {
                 photoElement.style.backgroundImage =
-                    "url(/path/to/default/avatar.png)";
+                    "url(Assets/Media/defaultChar)";
             }
             const emailElement = document.querySelector(".profile-email");
             if (user.email) {
@@ -195,7 +195,7 @@ if (logoutButton) {
         try {
             await auth.signOut();
             alert("Logout Successfully!")
-            window.location.href = "../html/BeforeLogin.html";
+            window.location.href = "/Index.html";
         } catch (error) {
             console.error("Error during logout:", error);
         }
