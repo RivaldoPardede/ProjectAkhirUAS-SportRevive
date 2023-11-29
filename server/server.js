@@ -34,7 +34,6 @@ const authenticate = async (req, res, next) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/Assets', express.static('../src/Assets'))
 
 app.options("/create", cors());
 app.post("/create", async (req, res) => {

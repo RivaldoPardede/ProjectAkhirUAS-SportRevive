@@ -34,7 +34,6 @@ googleLoginButtons.forEach((button) => {
             const user = result.user;
 
             if (isRegisterButton) {
-                // Jika tombol register, periksa apakah email sudah terdaftar
                 const emailExists = await checkEmailExists(user.email);
 
                 if (emailExists) {
@@ -42,7 +41,6 @@ googleLoginButtons.forEach((button) => {
                     return;
                 }
 
-                // Jika email belum ada di Firestore, simpan data
                 await fetch("http://localhost:8080/create", {
                     method: "POST",
                     headers: {
@@ -55,7 +53,6 @@ googleLoginButtons.forEach((button) => {
                 });
             }
 
-            // Pindah ke halaman setelah login
             window.location.href = "html/AfterLogin.html";
         } catch (error) {
             const errorCode = error.code;
@@ -195,7 +192,7 @@ if (logoutButton) {
         try {
             await auth.signOut();
             alert("Logout Successfully!")
-            window.location.href = "/Index.html";
+            window.location.href = "../index.html";
         } catch (error) {
             console.error("Error during logout:", error);
         }
